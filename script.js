@@ -47,6 +47,31 @@ function playRound( computerChoice, playerChoice ){
     return result;
 }
 
-const playerChoice = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerChoice, computerSelection));
+function game(){
+  
+    let playerWons = 0;
+    let computerWons = 0; 
+
+    for(let i=0; i<5; i++){
+        const playerChoice = prompt("Enter your value");
+        const computerSelection = getComputerChoice();
+        const result = playRound(playerChoice, computerSelection);
+        if( result === 'Player Won!'){
+            playerWons++;
+        }else if( result === 'Computer Won!' ){
+            computerWons++;
+        }else if( result === 'Tie!' ){
+            playerWons++;
+            computerWons++;
+        }
+    }
+
+    if( playerWons > computerWons ){
+        console.log('Player Won!');
+    }else{
+        console.log('Computer Won!');
+    }
+
+}
+
+game();
