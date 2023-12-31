@@ -4,6 +4,8 @@ function getComputerChoice() {
   return choices[Math.floor(Math.random() * 3)];
 }
 
+console.log('test')
+
 function playRound( computerChoice, playerChoice ){
 
     computerChoice = computerChoice.toLowerCase();
